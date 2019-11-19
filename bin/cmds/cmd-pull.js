@@ -6,6 +6,8 @@ exports.builder = (yargs) => {
   return yargs
 }
 exports.handler = function (args) {
-  console.log('TODO: pull')
-  console.log(args);
+
+  let Pull = require('../../lib/pull/pull.js');
+  let pull = new Pull(args);
+  pull.run();
 }

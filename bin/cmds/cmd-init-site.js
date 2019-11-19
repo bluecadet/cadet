@@ -6,6 +6,9 @@ exports.builder = (yargs) => {
   return yargs
 }
 exports.handler = function (args) {
-  console.log('TODO: init-site')
-  console.log(args);
+
+  let InitSite = require('../../lib/init-site/init-site.js');
+  let initSite = new InitSite(args);
+  initSite.run();
+
 }

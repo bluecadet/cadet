@@ -6,6 +6,8 @@ exports.builder = (yargs) => {
   return yargs
 }
 exports.handler = function (args) {
-  console.log('TODO: new-theme')
-  console.log(args);
+
+  let NewTheme = require('../../lib/new-theme/new-theme.js');
+  let newTheme = new NewTheme(args);
+  newTheme.run();
 }

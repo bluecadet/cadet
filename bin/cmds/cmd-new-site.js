@@ -6,6 +6,8 @@ exports.builder = (yargs) => {
   return yargs
 }
 exports.handler = function (args) {
-  console.log('TODO: new-site')
-  console.log(args);
+
+  let NewSite = require('../../lib/new-site/new-site.js');
+  let newSite = new NewSite(args);
+  newSite.run();
 }
