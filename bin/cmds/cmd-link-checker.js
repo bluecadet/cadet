@@ -59,9 +59,13 @@ exports.builder = (yargs) => {
       describe: 'Concurrent requests limit.',
       default: Infinity
     })
-    .option('reportFile', {
+    .option('jsonReportFile', {
       describe: 'Filename to save report',
       default: "cadet-blc-report.json"
+    })
+    .option('htmlReportFile', {
+      describe: 'Filename to save report',
+      default: "cadet-blc-report.html"
     })
     .option('reportDir', {
       describe: 'Directory to save report',

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Broken Link Report</title>
+
+  <head>
+    <style type="text/css">
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      table {
+        border-spacing: 0px;
+        width: 100%;
+      }
+      table td {
+        padding: 3px;
+      }
+      .row--header--page,
+      .row--header--link {
+        background: #ccc;
+      }
+      .row--page--has-broken td {
+        border-top: 1px solid red;
+      }
+      .row--link--cli-excluded {
+        display: none;
+      }
+      .row--link--broken {
+        background: red;
+      }
+      .row--link--not-broken {
+        display: none;
+        background: green;
+      }
+
+    </style>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Report:</h1>
+    <p>Site: {{ site }}</p>
+
+    <h2>Summary</h2>
+
+    <table class="summary-table">
+      <th>
+        <td></td>
+        <td>##</td>
+      </th>
+      <tr>
+        <td>Broken Links</td>
+        <td>{{ total.brokenLinks }}</td>
+      </tr>
+      <tr>
+        <td>Excluded Links</td>
+        <td>{{ total.excludedLinks }}</td>
+      </tr>
+      <tr>
+        <td>Links</td>
+        <td>{{ total.links }}</td>
+      </tr>
+      <tr>
+        <td>Pages</td>
+        <td>{{ total.pages }}</td>
+      </tr>
+      <tr>
+        <td>Start Time</td>
+        <td>{{formatDate total.startTimeObj day="numeric" month="long" year="numeric" hour="numeric" minute="numeric" second="numeric" }}</td>
+      </tr>
+    </table>
+
+    <hr>
+
+    <table>
+      {{#each pages}}
+        <tr class="row--header--page">
+          <td colspan="5">Page</td>
+          <td >Excluded Links</td>
+          <td >Broken Links</td>
+          <td >Total Links</td>
+        </tr>
+        <tr class="row--page {{resultPageClasses this}}">
+          <td colspan="5">{{ base }}</td>
+          <td >{{ excludedLinks }}</td>
+          <td >{{ brokenLinks }}</td>
+          <td >{{ totalLinks }}</td>
+        </tr>
+        <tr class="row--header--link">
+          <td>Url</td>
+          <td>Broken</td>
+          <td>Internal</td>
+          <td>Same Page</td>
+          <td>Excluded</td>
+          <td>Broken Reason</td>
+          <td>Excluded Reason</td>
+          <td>CLI Excluded</td>
+        </tr>
+        {{#each results}}
+        <tr class="row--link {{resultRowClasses this}}">
+          <td>{{ url.original }}</td>
+          <td>{{ broken }}</td>
+          <td>{{ internal }}</td>
+          <td>{{ samePage }}</td>
+          <td>{{ excludeds }}</td>
+          <td>{{ brokenReason }}</td>
+          <td>{{ excludedReason }}</td>
+          <td>{{ __cli_excluded }}</td>
+        </tr>
+        {{/each}}
+      {{/each}}
+    </table>
+
+    <br>
+    <hr>
+    <br>
+    <p>
+      <button class="show-all">Show All</button>
+      <button class="show-broken">Show Broken</button>
+      <button class="show-inc">Show Included</button>
+    </p>
+
+    <script>
+
+      let showAllBtn = document.querySelector("button.show-all");
+      showAllBtn.addEventListener("click", () => {
+        let allRows = document.querySelectorAll("table tr");
+        allRows.forEach(function(row) {
+          row.style.display = "table-row";
+        });
+      });
+
+      let showBrokenBtn = document.querySelector("button.show-broken");
+      showBrokenBtn.addEventListener("click", () => {
+        let allRows = document.querySelectorAll("table tr.row--link");
+
+        allRows.forEach((row) => {
+          if (row.classList.contains("row--link--broken")) {
+            row.style.display = "table-row";
+          } else {
+            row.style.display = "none";
+          }
+        });
+      });
+
+
+      let showIncBtn = document.querySelector("button.show-inc");
+      showIncBtn.addEventListener("click", () => {
+        let allRows = document.querySelectorAll("table tr.row--link");
+
+        allRows.forEach((row) => {
+          if (row.classList.contains("row--link--cli-excluded")) {
+            row.style.display = "none";
+          } else {
+            row.style.display = "table-row";
+          }
+        });
+      });
+
+    </script>
+</body>
+</html>
