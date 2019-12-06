@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
-require('yargs')
+// Create Global Logger.
+let Logger = require('../lib/utils/logger.js').getInstance();
+
+let args = require('yargs')
   .commandDir('cmds')
   .demandCommand()
   .help()
   .epilog('copyright 2019')
   .argv
-
-
