@@ -4,7 +4,10 @@ let Logger = require('../../lib/utils/logger.js').getInstance();
 exports.command = 'new-site'
 exports.desc = 'Update composer files, etc. on a new site.'
 exports.builder = (yargs) => {
-  yargs.count('verbose')
+  yargs
+    .help('h')
+    .alias('h', 'help')
+    .count('verbose')
     .alias('v', 'verbose');
 
   return yargs
