@@ -1,0 +1,22 @@
+# Local Config #
+##########
+.local-gulpconfig.json
+.cadet
+.cadet/*
+
+local.services.yml
+!/web/sites/default/services.yml
+
+.vscode
+/.vscode
+.vscode/*
+node_modules/
+/web/modules/bluecadet
+/web/modules/bluecadet/*
+web/themes/custom/*/assets/dist/css
+web/themes/custom/*/assets/dist/js
+web/themes/custom/*/assets/dist/images
+web/modules/custom/*/assets/dist
+
+faviconData.json
+faviconDataAdmin.json
