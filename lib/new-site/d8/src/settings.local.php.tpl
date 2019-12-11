@@ -111,6 +111,14 @@ $settings['trusted_host_patterns'][] = '^.+.local$';
  */
 $config['system.performance']['cache']['page']['max_age'] = 0;
 
+/**
+ * Hash salt.
+ *
+ * We set this here b/c Pantheon has a specific one.
+ * https://pantheon.io/docs/settings-php
+ */
+$settings['hash_salt'] = '7HFScEUr18e3PY40l02gjr1WjAbt8i6rF7_dfG3njDfoMthBcnbeGHGfQ3J6CuozKyUVwnBVbg';
+
 // ***** MAMP *****/
 $databases['default']['default'] = [
   'database' => 'DB_NAME_REPLACEMENT',
