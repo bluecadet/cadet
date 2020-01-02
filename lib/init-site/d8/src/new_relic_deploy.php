@@ -1,4 +1,6 @@
 <?php
+
+// phpcs:ignoreFile
 // No need to log this script operation in New Relic's stats.
 // PROTIP: you might also want to use this snippet if you have PHP code handling
 // very fast things like redirects or the like.
