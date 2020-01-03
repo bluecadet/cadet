@@ -2,7 +2,17 @@
 exports.command = 'new-theme'
 exports.desc = 'Install new theme, either Drupal or Wordpress'
 exports.builder = (yargs) => {
-
+  yargs
+    .option('theme-type', {
+      describe: 'What type pf theme to create. Normal/Admin',
+      default: 'normal',
+      choices: ['normal', 'admin'],
+      alias: 't'
+    })
+    .help('h')
+    .alias('h', 'help')
+    .count('verbose')
+    .alias('v', 'verbose');
   return yargs
 }
 exports.handler = function (args) {

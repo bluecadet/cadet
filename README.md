@@ -11,7 +11,10 @@ npm install -g @bluecadet/cadet
 
 ## Commands
 
+[new-theme](./docs/new-theme.md)
+
 ## Instantiating a new Project
+
 When starting off a new project...
 
 - run `terminus build:project:create ...`
