@@ -25,8 +25,9 @@ When starting off a new project...
 - run `cadet init-site`
 - commit changes
 - run `drush cex` and commit changes
-- TODO: run `cadet create-theme` to create new FE theme
+- run `cadet create-theme` to create new FE theme
 - TODO: run `cadet create-theme` again if you want to create a specific BE theme
+- commit changes
 - run `cadet ci-update` to add the latest ci files and changes
 - commit changes
 
