@@ -11,7 +11,10 @@ npm install -g @bluecadet/cadet
 
 ## Commands
 
+[new-theme](./docs/new-theme.md)
+
 ## Instantiating a new Project
+
 When starting off a new project...
 
 - run `terminus build:project:create ...`
@@ -22,10 +25,12 @@ When starting off a new project...
 - run `cadet init-site`
 - commit changes
 - run `drush cex` and commit changes
-- TODO: run `cadet create-theme` to create new FE theme
-- TODO: run `cadet create-theme` again if you want to create a specific BE theme
-- run `cadet ci-update` to add the latest ci files and changes
+- run `cadet new-theme` to create new FE theme
+- TODO: run `cadet new-theme` again if you want to create a specific BE theme
 - commit changes
+- run `cadet ci-update --incTestConfig` to add the latest ci files and changes and base test files
+- commit changes
+- TODO: Setup RaspberryPi with stuff.....
 
 
 ## Installing a new Project locally
