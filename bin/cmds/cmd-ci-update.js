@@ -1,5 +1,5 @@
 exports.command = 'ci-update'
-exports.desc = 'Install lates CircleCi config files'
+exports.desc = 'Install latest CircleCi config files'
 exports.builder = (yargs) => {
   yargs.alias('i', 'installer')
   .describe('i', "")
