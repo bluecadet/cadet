@@ -1,0 +1,17 @@
+# Local Config #
+################
+.local-gulpconfig.json
+.cadet
+.cadet/*
+
+wp-config-local.php
+web/wp-config-local.php
+!web/wp-content/themes/*
+
+.vscode
+/.vscode
+.vscode/*
+node_modules/
+
+faviconData.json
+faviconDataAdmin.json
