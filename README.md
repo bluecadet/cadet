@@ -41,3 +41,15 @@ When starting local development on a new project...
 - run `cadet pull` and pull db only
 - run `cadet new-site`
   - There should be nothing to commit, and site should be ready to go! 🚀
+
+
+## Development notes
+
+### Messaging Colors
+Interactives (QOA): `chalk.cyan('text')`
+Warning/Critical Interactives (QOA): `chalk.yellow.bold('text')`
+Status/Updates: `chalk.blue('text')` (when appropriate, use `...` before and after message)
+Process Complete, OK: `chalk.green('text')`
+Fail, Alert: `chalk.white.bgRed('text')`
+Warning: `chalk.yellow('text')`
+
