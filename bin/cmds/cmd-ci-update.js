@@ -1,3 +1,5 @@
+let Logger = require('../../lib/utils/logger.js').getInstance();
+
 exports.command = 'ci-update'
 exports.desc = 'Install latest CircleCi config files'
 exports.builder = (yargs) => {
@@ -26,6 +28,7 @@ exports.builder = (yargs) => {
   return yargs
 }
 exports.handler = function (args) {
+  Logger.setVerb(args.v);
 
   let CiUpdate = require('../../lib/ci-update/ci-update.js');
   let ciUpdate = new CiUpdate(args);

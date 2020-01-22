@@ -1,3 +1,4 @@
+let Logger = require('../../lib/utils/logger.js').getInstance();
 
 exports.command = 'new-theme'
 exports.desc = 'Install new theme, either Drupal or Wordpress'
@@ -16,6 +17,7 @@ exports.builder = (yargs) => {
   return yargs
 }
 exports.handler = function (args) {
+  Logger.setVerb(args.v);
 
   let NewTheme = require('../../lib/new-theme/new-theme.js');
   let newTheme = new NewTheme(args);
