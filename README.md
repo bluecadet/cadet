@@ -46,10 +46,10 @@ When starting local development on a new project...
 ## Development notes
 
 ### Messaging Colors
-Interactives (QOA): `chalk.cyan('text')`
-Warning/Critical Interactives (QOA): `chalk.yellow.bold('text')`
-Status/Updates: `chalk.blue('text')` (when appropriate, use `...` before and after message)
-Process Complete, OK: `chalk.green('text')`
-Fail, Alert: `chalk.white.bgRed('text')`
-Warning: `chalk.yellow('text')`
+- Interactives (QOA): `chalk.cyan('text')`
+- Warning/Critical Interactives (QOA): `chalk.yellow.bold('text')`
+- Status/Updates: `chalk.blue('text')` (when appropriate, use `...` before and after message)
+- Process Complete, OK: `chalk.green('text')`
+- Fail, Alert: `chalk.white.bgRed('text')`
+- Warning: `chalk.yellow('text')`
 
