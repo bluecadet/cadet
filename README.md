@@ -20,6 +20,7 @@ When starting off a new project...
 - run `terminus build:project:create ...`
 - clone new github repo locally
 - create new local DB (rememeber the name of the DB)
+- run `cadet pull --init`
 - run `cadet pull` and pull db only
 - run `cadet new-site`
 - run `cadet init-site`
