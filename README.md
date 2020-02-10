@@ -40,6 +40,8 @@ When starting local development on a new project...
 - clone new github repo locally
 - create new local DB (rememeber the name of the DB)
 - run `cadet pull` and pull db only
+- run `composer install`
+- run `npm install`
 - run `cadet new-site`
   - There should be nothing to commit, and site should be ready to go! 🚀
 
