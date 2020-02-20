@@ -32,6 +32,40 @@ When starting off a new project...
 - run `cadet ci-update --incTestConfig` to add the latest ci files and changes and base test files
 - commit changes
 - TODO: Setup RaspberryPi with stuff.....
+  - Once connected to the Bluecadet Network, office or VPN.
+  - SSH into the raspi, `ssh pi@[IP ADDRESS]`
+    - Ask Pete for the IP Address.
+  - Don't think to hard about the password.
+  - run `crontab -l` to get familiar with what we will be doing. We typically want to run daily tasks on each environment. Feel free to run as many different commands, but please keep blocks together in each project.
+  - cd to /usr/local/bin where we store all the scripts, `cd /usr/local/bin`
+  - copy "proj-template" folder, `sudo cp -r proj-template/ [PROJECT NAME]`
+  - edit files inside your new project directory. All Actions are commented out. Add what you need.
+    - `cd [PROJECT NAME]`
+    - `sudo nano dev-daily` and repeat for all files...
+  - Add new commands to the crontab
+    - `crontab -e`
+    - create a new block of code and list your project with a comment.
+    - Try to spread out your tasks so not everything runs at once.
+    - Make sure to use a unique log file for your project.
+    - should look something like:
+
+    ```
+    # [PROJECT_NAME]
+    # contact: [your name] [your email]
+    10 1 * * * /usr/local/bin/[PROJECT_NAME]/dev-daily >> /home/pi/Documents/cron-[PROJECT_NAME].log 2>&1
+    5 1 * * * /usr/local/bin/[PROJECT_NAME]/test-daily >> /home/pi/Documents/cron-[PROJECT_NAME].log 2>&1
+    0 1 * * * /usr/local/bin/[PROJECT_NAME]/live-daily >> /home/pi/Documents/cron-[PROJECT_NAME].log 2>&1
+    45 1 * * * /usr/local/bin/[PROJECT_NAME]/copy-down-daily >> /home/pi/Documents/cron-[PROJECT_NAME].log 2>&1
+    ```
+
+    - in order to test your commands run `/usr/local/bin/[PROJECT_NAME]/dev-daily` and check the output
+    - if you saved the crontab correctly, you should see `crontab: installing new crontab`.
+
+
+
+
+
+
 
 
 ## Installing a new Project locally
