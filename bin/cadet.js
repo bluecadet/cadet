@@ -7,5 +7,5 @@ let args = require('yargs')
   .commandDir('cmds')
   .demandCommand()
   .help()
-  .epilog('copyright 2019')
+  .epilog('copyright 2020')
   .argv

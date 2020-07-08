@@ -1,3 +1,5 @@
+let Logger = require('../../lib/utils/logger.js').getInstance();
+
 exports.command = 'link-checker <site>'
 exports.aliases = ["blc"]
 exports.desc = 'Checks a site for broken links'
@@ -90,6 +92,7 @@ exports.builder = (yargs) => {
   return yargs
 }
 exports.handler = function (args) {
+  Logger.setVerb(args.v);
 
   let LinkChecker = require('../../lib/link-checker/link-checker.js');
   let linkChecker = new LinkChecker(args);

@@ -1,4 +1,3 @@
-
 let Logger = require('../../lib/utils/logger.js').getInstance();
 
 exports.command = 'new-site'
