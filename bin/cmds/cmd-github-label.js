@@ -13,7 +13,7 @@ exports.builder = (yargs) => {
     .option('p', {
       type: 'array',
       describe: 'Which groups of themes and modules.',
-      choices: ['defaults', 'priorities', 'teams', 'components'],
+      choices: ['defaults', 'priorities', 'teams', 'components', 'estimates'],
       alias: 'label-packages'
     })
 
