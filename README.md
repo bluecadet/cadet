@@ -25,6 +25,7 @@ When starting off a new project...
 - run `cadet new-site`
 - run `cadet init-site`
 - commit changes
+- verify config directory in settings.php
 - run `drush cex` and commit changes
 - run `cadet new-theme` to create new FE theme
 - TODO: run `cadet new-theme` again if you want to create a specific BE theme
