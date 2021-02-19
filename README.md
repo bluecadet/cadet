@@ -7,31 +7,52 @@
 npm install -g @bluecadet/cadet
 ```
 
+## Requirements
+- Node v12+
+- MAMP
+
+## Commands Quick Links
+
+- [`setup-project`](#setup-project)
+- [`setup-local`](#setup-local)
+- [`new-theme`](#new-theme)
+- [`pull`](#pull)
+- [`ci-update`](#ci-update)
+- [`github-label`](#github-label)
+
+
 ## Usage
 
-## Commands
+### When onboarding to an existing project
 
-[new-theme](./docs/new-theme.md)
+- clone github repo locally
+- fire up MAMP, create new local site and database
+- run `cadet setup-local`
+- run `cadet pull`
+- run `composer install`
+- run `npm install`
+  - There should be nothing to commit, and site should be ready to go! 🚀
 
-## Instantiate a new project and set up your local development environment
 
-When starting off a new project...
+### When starting a new project
 
 - run `terminus build:project:create ...`
+  - D8: `terminus build:project:create --team="Bluecadet" --org="bluecadet" --email="yourEmail@bluecadet.com" --admin-email="yourEmail@bluecadet.com" d8 [PROJECT_NAME]`
+  - WP: `terminus build:project:create --team="Bluecadet" --org="bluecadet" --email="yourEmail@bluecadet.com" --admin-email="yourEmail@bluecadet.com" wp [PROJECT_NAME]`
 - clone new github repo locally
-- create new local DB (rememeber the name of the DB)
-- run `cadet pull --init`
-- run `cadet pull` and pull db only
-- run `cadet new-site`
+- fire up MAMP, create new local site and database
 - run `cadet setup-project`
 - commit changes
-- verify config directory in settings.php
-- run `drush cex` and commit changes
+- **Drupal:** verify config directory in settings.php
+- **WordPress:** update `WP_HOME` and `WP_SITEURL` definitions in `wp-config-local.php`
+- run `cadet pull`
+- **Drupal:** run `drush cex` and commit changes
 - run `cadet new-theme` to create new FE theme
-- TODO: run `cadet new-theme` again if you want to create a specific BE theme
+  - *PRESS SPACEBAR TO SELECT ONE OR MORE THEMES, then enter to confirm*
 - commit changes
 - run `cadet ci-update --incTestConfig` to add the latest ci files and changes and base test files
 - commit changes
+
 - TODO: Setup RaspberryPi with stuff.....
   - Once connected to the Bluecadet Network, office or VPN.
   - SSH into the raspi, `ssh pi@[IP ADDRESS]`
@@ -63,24 +84,103 @@ When starting off a new project...
     - if you saved the crontab correctly, you should see `crontab: installing new crontab`.
 
 
+## Commands Overview
+
+### `setup-project`
+```
+$ cadet setup-project
+```
+
+Use when starting a new project. (Should only be ran once per project)
+
+Features:
+- Setup Github credentials
+- Setup Pantheon credentials
+- Setup Circle CI if applicable
+- Alter .gitignore for CMS specific build
+- D8:
+  - Add composer packages
+  - Setup Pantheon workflows
+- WP
+  - Add composer packages
+  - Add wp-config.php
+- Runs `setup-local`
+
+
+### `setup-local`
+```
+$ cadet setup-local
+```
+
+Use when onboarding to an existing project that uses cadet. Creates local files for development.
+
+Features:
+- Setup Github credentials
+- Setup Pantheon credentials
+- D8:
+  - Add local dev files
+- WP
+  - Add local dev files
+
+
+### `new-theme`
+```
+$ cadet new-theme
+```
+
+Creates new themes in a Drupal or WordPress project. MULTIPLE OPTIONS CAN BE SELECTED, USE SPACEBAR TO SELECT IN THE PROMPT.
+
+Features:
+- Themes from [BC Base Themes](https://github.com/bluecadet/bc-base-themes)
+
+
+
+### `pull`
+```
+$ cadet pull
+$ cadet pull --exclude=...
+$ cadet pull --force|-f
+```
+
+Pull database and/or files from a Pantheon source into project.
+
+
+#### Options:
+
+`--exclude`:
+
+Use this flag to exclude files or directories from being pulled. Seperate paths with using a comma.
+
+```
+$ cadet pull --exclude=private
+$ cadet pull --exclude=private,public/not-this.jpeg
+```
+
+`--force -f`:
+
+When pulling a database, cadet will look for a backup created within the past 'X' number of minutes, which is added during setup (and stored in the `bac_exp` value of `.cadet/local-db.json`)
+
+Using the `--force` or `-f` flag will override the default value and force a new database backup to be created in Pantheon.
+
+
+### `ci-update`
+```
+$ cadet ci-update
+```
+
+Update CI processes to a specific version. More to come...
+
+
+### `github-label`
+```
+$ cadet github-label
+```
+
+Create commonly used GitHub labels in the project repo.
 
 
 
 
-
-
-## Set up your local development environment for an existing project
-When starting local development on a new project...
-
-- clone new github repo locally
-- create new local DB (rememeber the name of the DB)
-- run `cadet pull --init`
-- run `cadet pull` and pull db only
-- run `composer install`
-- run `npm install`
-- run `cadet new-site`
-- run `composer install`
-  - There should be nothing to commit, and site should be ready to go! 🚀
 
 
 ## Troubleshooting
