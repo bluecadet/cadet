@@ -1,7 +1,8 @@
 let Logger = require('../../lib/utils/logger.js').getInstance();
 
 exports.command = 'setup-project'
-exports.desc = 'Fully create a new site with pantheon build tools.'
+exports.aliases = ['init-site']
+exports.desc = 'Setup a new project with default composer settings and Pantheon connections'
 exports.builder = (yargs) => {
   yargs
     .option('packages', {

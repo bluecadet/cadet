@@ -1,7 +1,8 @@
 let Logger = require('../../lib/utils/logger.js').getInstance();
 
-exports.command = 'new-site'
-exports.desc = 'Update composer files, etc. on a new site.'
+exports.command = 'setup-local'
+exports.aliases = ['new-site']
+exports.desc = 'Setup a local site'
 exports.builder = (yargs) => {
   yargs
     .help('h')
@@ -14,7 +15,7 @@ exports.builder = (yargs) => {
 exports.handler = function (args) {
   Logger.setVerb(args.v);
 
-  let NewSite = require('../../lib/new-site/new-site.js');
-  let newSite = new NewSite(args);
-  newSite.run();
+  let SetupLocal = require('../../lib/setup-local/setup-local.js');
+  let newLocal = new SetupLocal(args);
+  newLocal.run();
 }
