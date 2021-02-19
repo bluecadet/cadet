@@ -23,7 +23,7 @@ When starting off a new project...
 - run `cadet pull --init`
 - run `cadet pull` and pull db only
 - run `cadet new-site`
-- run `cadet init-site`
+- run `cadet setup-project`
 - commit changes
 - verify config directory in settings.php
 - run `drush cex` and commit changes

@@ -1,6 +1,6 @@
 let Logger = require('../../lib/utils/logger.js').getInstance();
 
-exports.command = 'init-site'
+exports.command = 'setup-project'
 exports.desc = 'Fully create a new site with pantheon build tools.'
 exports.builder = (yargs) => {
   yargs
@@ -20,8 +20,8 @@ exports.builder = (yargs) => {
 exports.handler = function (args) {
   Logger.setVerb(args.v);
 
-  let InitSite = require('../../lib/init-site/init-site.js');
-  let initSite = new InitSite(args);
-  initSite.run();
+  let setupProject = require('../../lib/setup-project/setup-project.js');
+  let newProject = new setupProject(args);
+  newProject.run();
 
 }
