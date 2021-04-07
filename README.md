@@ -37,8 +37,10 @@ npm install -g @bluecadet/cadet
 ### When starting a new project
 
 - run `terminus build:project:create ...`
-  - D8: `terminus build:project:create --team="Bluecadet" --org="bluecadet" --email="yourEmail@bluecadet.com" --admin-email="yourEmail@bluecadet.com" --visibility="private" d8 [PROJECT_NAME]`
-  - WP: `terminus build:project:create --team="Bluecadet" --org="bluecadet" --email="yourEmail@bluecadet.com" --admin-email="yourEmail@bluecadet.com" --visibility="private" wp [PROJECT_NAME]`
+  - Login to terminus with bc-bot@bluecadet.com account
+  - D8: `terminus build:project:create --team="Bluecadet" --org="bluecadet" --email="bc-bot@bluecadet.com" --admin-email="bc-bot@bluecadet.com" --visibility="private" d8 [PROJECT_NAME]`
+  - WP: `terminus build:project:create --team="Bluecadet" --org="bluecadet" --email="bc-bot@bluecadet.com" --admin-email="bc-bot@bluecadet.com" --visibility="private" wp [PROJECT_NAME]`
+  - switch terminus user back to your personal account
 - clone new github repo locally
 - fire up MAMP, create new local site and database
 - run `cadet setup-project`
