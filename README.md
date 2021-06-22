@@ -25,13 +25,14 @@ npm install -g @bluecadet/cadet
 
 ### When onboarding to an existing project
 
-- clone github repo locally
-- fire up MAMP, create new local site and database
-- run `cadet setup-local`
-- run `cadet pull`
-- run `composer install`
-- run `npm install`
-  - There should be nothing to commit, and site should be ready to go! 🚀
+- Clone github repo locally
+- Fire up MAMP, create new local site and database
+- If using MAMP and a project with a nested webroot (usually `web`), point MAMP to the webroot
+- Run `cadet setup-local`
+- Run `cadet pull`
+- Run `composer install`
+- Run `npm install`
+- There should be nothing to commit, and site should be ready to go! 🚀
 
 
 ### When starting a new project
