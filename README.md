@@ -53,6 +53,7 @@ npm install -g @bluecadet/cadet
 - run `cadet new-theme` to create new FE theme
   - *PRESS SPACEBAR TO SELECT ONE OR MORE THEMES, then enter to confirm*
 - commit changes
+- In CircleCI project settings, turn off "Only build pull requests"
 - run `cadet ci-update --incTestConfig` to add the latest ci files and changes and base test files
 - commit changes
 
