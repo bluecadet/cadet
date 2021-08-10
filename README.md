@@ -43,6 +43,8 @@ npm install -g @bluecadet/cadet
   - WP: `terminus build:project:create --team="Bluecadet" --org="bluecadet" --email="bc-bot@bluecadet.com" --admin-email="bc-bot@bluecadet.com" --visibility="private" wp [PROJECT_NAME]`
   - switch terminus user back to your personal account
 - clone new github repo locally
+- create `develop` branch
+- in github settings, set developp as default branch
 - fire up MAMP, create new local site and database
 - run `cadet setup-project`
 - commit changes
