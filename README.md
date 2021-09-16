@@ -25,21 +25,26 @@ npm install -g @bluecadet/cadet
 
 ### When onboarding to an existing project
 
-- clone github repo locally
-- fire up MAMP, create new local site and database
-- run `cadet setup-local`
-- run `cadet pull`
-- run `composer install`
-- run `npm install`
-  - There should be nothing to commit, and site should be ready to go! 🚀
+- Clone github repo locally
+- Fire up MAMP, create new local site and database
+- If using MAMP and a project with a nested webroot (usually `web`), point MAMP to the webroot
+- Run `cadet setup-local`
+- Run `cadet pull`
+- Run `composer install`
+- Run `npm install`
+- There should be nothing to commit, and site should be ready to go! 🚀
 
 
 ### When starting a new project
 
 - run `terminus build:project:create ...`
-  - D8: `terminus build:project:create --team="Bluecadet" --org="bluecadet" --email="yourEmail@bluecadet.com" --admin-email="yourEmail@bluecadet.com" --visibility="private" d8 [PROJECT_NAME]`
-  - WP: `terminus build:project:create --team="Bluecadet" --org="bluecadet" --email="yourEmail@bluecadet.com" --admin-email="yourEmail@bluecadet.com" --visibility="private" wp [PROJECT_NAME]`
+  - Login to terminus with bc-bot@bluecadet.com account
+  - D8: `terminus build:project:create --team="Bluecadet" --org="bluecadet" --email="bc-bot@bluecadet.com" --admin-email="bc-bot@bluecadet.com" --visibility="private" d8 [PROJECT_NAME]`
+  - WP: `terminus build:project:create --team="Bluecadet" --org="bluecadet" --email="bc-bot@bluecadet.com" --admin-email="bc-bot@bluecadet.com" --visibility="private" wp [PROJECT_NAME]`
+  - switch terminus user back to your personal account
 - clone new github repo locally
+- create `develop` branch
+- in github settings, set developp as default branch
 - fire up MAMP, create new local site and database
 - run `cadet setup-project`
 - commit changes
@@ -50,6 +55,7 @@ npm install -g @bluecadet/cadet
 - run `cadet new-theme` to create new FE theme
   - *PRESS SPACEBAR TO SELECT ONE OR MORE THEMES, then enter to confirm*
 - commit changes
+- In CircleCI project settings, turn off "Only build pull requests"
 - run `cadet ci-update --incTestConfig` to add the latest ci files and changes and base test files
 - commit changes
 
