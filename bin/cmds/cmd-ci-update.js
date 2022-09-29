@@ -12,7 +12,7 @@ exports.builder = (yargs) => {
   .default('c', "1.x-latest") // @TODO: remove this after development
   .boolean('t')
   .alias('t', 'incTestConfig')
-  .describe('t', "Include Deafult Test Config Files. (This will destroy any changes you may have made in them)")
+  .describe('t', "Include Deafult Test Config Files. (This will destroy any changes you may have made in them) only valid for 1.x")
   .default('t', false)
   .help('h')
   .alias('h', 'help')
