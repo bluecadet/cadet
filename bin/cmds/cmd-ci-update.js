@@ -7,6 +7,7 @@ exports.builder = (yargs) => {
   .describe('i', "")
   .default('i', "bc-ci-for-pantheon") // @TODO: remove this after development
   .choices('i', ['bc-ci-for-pantheon'])
+  .string('c')
   .alias('c', 'ci-version')
   .describe('c', "CI version: semver range, or [branch]-latest")
   .default('c', "1.x-latest") // @TODO: remove this after development
