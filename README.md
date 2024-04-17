@@ -144,11 +144,32 @@ Features:
 ### `pull`
 ```
 $ cadet pull
+$ cadet pull --ddev
 $ cadet pull --exclude=...
 $ cadet pull --force|-f
 ```
 
 Pull database and/or files from a Pantheon source into project.
+
+#### DDEV
+
+```
+$ cadet pull --ddev
+```
+
+Running this command will check and see if a database backup has been generated in the last 90 minutes. If not, a new backup will be created. `ddev pull pantheon` will then be ran with an interactive prompt.
+
+**Assumptions:**
+- ddev is installed in project root (where command is ran from)
+- a `.ddev/providers/pantheon.yaml` file present
+- the pantheon site and env is configured in that file as:
+```yaml
+environment_variables:
+  project: [SITE_NAME].[ENV]
+```
+
+Note:
+To change the env, change the configuration in `.ddev/providers/pantheon.yaml`
 
 
 #### Options:
